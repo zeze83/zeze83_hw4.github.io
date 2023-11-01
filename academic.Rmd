@@ -9,10 +9,44 @@ output:
 
 # Undergraduate Schools
 
-* Rensselear Polytechnic Institution
+## Rensselear Polytechnic Institution
 
-* Boston University
+* Bachelor of Science in Mathematics, GPA 3.77/4.0  
+
+*	Dean's Honor List: Fall 2019, Spring 2020, Fall 2020, Spring 2021, Summer 2021
+
+## Boston University
+
+* Bachelor of Art and Science
+
+* Major in Statistics, minor in Economics; Dean’s List: Spring 2022
 
 # Graduate Schools
 
-* Columbia University
+## Columbia University
+
+* Master of Science in Biostatistics Data Science Track 
+
+# Projects
+
+* Bike Sharing Project| Linear Models 09.2022-12.2022
+
+  * Used ggplot to visualize the correlation between the variables, observing and forecasting customer behavior based on patterns in seasonal, weekly consumption, weather, and factors such as temperature, humidity, and wind speed
+
+  *	Constructed multiple linear regression models; made the quadratic transformation, scatter plot matrix, and correlation matrix to determine the decisive covariates and plotted the standard residuals; reduced risk of underestimation between different year by perform time series based on GLS model, autocorrelation1, and ACF lag plots
+
+  *	Concluded that registered consumers exhibited more consistent usage patterns across all influencing variables, whereas non-registered customers used less during periods of high temperature and on workdays regardless of year difference
+
+  *	Gave advice to bike-sharing in Washington D.C. on how to distribute the number of bicycles in order to increase their profitability
+
+* Machine Learning in Business Analysis 07.2022-08.2022
+
+  * Utilized the significance of overfitting, goodness measurements, feature selection, data cleaning, and feature engineering in the construction of machine learning algorithmic models
+
+  *	Gained knowledge of machine learning algorithms, deep learning, neural networks, boosted decision trees, and linear logistic regression 
+
+  * Created and presented a presentation on a machine learning project using real-world data from a lending club loan analysis
+
+  *	Examined past data to identify traits of non-performing loans and forecast upcoming loan types to help Lending Club Loan reach out to customers or create new member formulations
+
+

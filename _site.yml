@@ -5,10 +5,10 @@ navbar:
   right:
     - text: "Academic"
       href: academic.html
-    - text: "Projects"
-      href: projects.html
     - text: "Plotly"
       href: plotly.html
+    - text: "Flexdashboard"
+      href: flex.html
     - icon: fa-envelope fa-lg
       href: mailto:<you@youremail.com>
     - icon: fa-github fa-lg

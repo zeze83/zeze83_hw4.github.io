@@ -31,4 +31,4 @@ Here is a link to the my [github](https://github.com/zeze83) page.
 
 Here is a link to problem 2 [plotly](plotly.html) codes.
 
-Here is a link to problem 2 [flexdashboard](flexdashboard.html) codes.
+Here is a link to problem 2 [flexdashboard](flex.html) codes.
