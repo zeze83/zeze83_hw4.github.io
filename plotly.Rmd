@@ -44,8 +44,8 @@ NYC_food =
   select(boro, score,cuisine_description, grade, zipcode) |> 
   drop_na(score) |> 
   drop_na(grade) |>
-  filter(
-    boro == "MANHATTAN")
+  mutate(boro = ifelse(boro == 'Missing', NA, boro)) |> 
+  drop_na(boro) 
 ```
 
 ## Make a scatterplot!
@@ -54,23 +54,42 @@ NYC_food =
 NYC_food |> 
   mutate(text_label = str_c("Grade: $", grade, "\nScore: ", score)) |> #\n: line break
   plot_ly(x = ~cuisine_description, y = ~score, color = ~zipcode, text = ~text_label,
-          type = "scatter", mode = "markers")
+          type = "scatter", mode = "markers") |>
+  layout(
+    title = "Scatter plot of scores by cuisine styles across zipcode",
+    yaxis = list(title = "Scores"),
+    xaxis = list(title = "Cuisine styles")
+  )
 ```
 
 ## Make a boxplot!
 
-```{r}
+```{r cuisine}
 NYC_food |> 
   plot_ly(y = ~score, color = ~cuisine_description, 
-          type = "box")
+          type = "box") |>
+  layout(
+    title = "Box plot of scores by cuisine styles",
+    yaxis = list(title = "Scores"),
+    xaxis = list(title = "Cuisine styles")
+  )
 ```
 
 ## Make a barplot!
 
 ```{r}
 NYC_food |>
-  count(cuisine_description) |> 
-  mutate(cuisine_description = fct_reorder(cuisine_description, n)) |>
+  select(cuisine_description, boro) |>
+  group_by(cuisine_description) |>
+  summarise(n = n()) |>
+  filter(n > 5000) |> 
+  mutate(cuisine_description = ifelse(cuisine_description == "Latin (Cuban, Dominican, Puerto Rican, South & Central American)", "Latin",cuisine_description),
+         cuisine_description = fct_reorder(cuisine_description, n)) |>
   plot_ly(x = ~cuisine_description, y = ~n, color = ~cuisine_description,
-          type = "bar", colors = "viridis")
+          type = "bar", colors = "viridis") |>
+  layout(
+    title = "Bar plot of number of cuisine styles",
+    yaxis = list(title = "Number"),
+    xaxis = list(title = "Cuisine Styles")
+  )
 ```
