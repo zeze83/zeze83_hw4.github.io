@@ -7,6 +7,8 @@ output:
     theme: flatly
 ---
 
+# Briefly Introduction
+
 ## Daily status
 
 Hard working
@@ -19,12 +21,14 @@ Ze's personality is [ISFJ-A](https://www.16personalities.com/isfj-personality).
 
 ![](images/isfj.png)
 
-# Link to other website
+# Link to Other Website
 
 Here is a link to my [academic](academic.html) experience.
 
 Here is a link to the my [github](https://github.com/zeze83) page.
 
-# Problem2
+# Problem 2
 
-Here is a link to problem 2 [plotly](plotly.html) codes
+Here is a link to problem 2 [plotly](plotly.html) codes.
+
+Here is a link to problem 2 [flexdashboard](flexdashboard.html) codes.

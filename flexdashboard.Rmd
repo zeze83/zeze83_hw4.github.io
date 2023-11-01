@@ -1,0 +1,60 @@
+---
+title: "Flexdashboard for NYC Restuarant Inspections"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+
+library(tidyverse)
+library(plotly)
+library(p8105.datasets)
+
+data(rest_inspec)
+
+NYC_food =
+  rest_inspec |> 
+  select(boro, score,cuisine_description, grade, zipcode) |> 
+  drop_na(score) |> 
+  drop_na(grade) |>
+  filter(
+    boro == "MANHATTAN")
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+NYC_food |> 
+  plot_ly(y = ~score, color = ~cuisine_description, 
+          type = "box")
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+NYC_food |> 
+  mutate(text_label = str_c("Grade: $", grade, "\nScore: ", score)) |> #\n: line break
+  plot_ly(x = ~cuisine_description, y = ~score, color = ~zipcode, text = ~text_label,
+          type = "scatter", mode = "markers")
+```
+
+### Chart C
+
+```{r}
+NYC_food |>
+  count(cuisine_description) |> 
+  mutate(cuisine_description = fct_reorder(cuisine_description, n)) |>
+  plot_ly(x = ~cuisine_description, y = ~n, color = ~cuisine_description,
+          type = "bar", colors = "viridis") |>
+  layout(legend= list(itemsizing='small'))
+```
+
